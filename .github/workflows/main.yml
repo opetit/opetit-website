@@ -13,7 +13,7 @@ jobs:
     env:
       HUGO_VERSION: 0.146.0
       BASE_URL: "https://opetit.fr/"
-      SFTP_SERVER: "sftp://ftp.cluster021.hosting.ovh.net"
+      SFTP_SERVER_NAME: "ftp.cluster021.hosting.ovh.net"
 
     steps:
       - name: Install lftp
@@ -41,4 +41,5 @@ jobs:
 
       - name: Deploy to server through sftp
         run: |
-          lftp -u ${{ secrets.OVH_FTP_USER }},${{ secrets.OVH_FTP_PASSWORD }} -p 22 -e "mirror -R --verbose --delete --exclude .htaccess ./public/ www; bye" ${SFTP_SERVER}
+          ssh-keygen -R ${SFTP_SERVER} \
+          && lftp -u ${{ secrets.OVH_FTP_USER }},${{ secrets.OVH_FTP_PASSWORD }} -p 22 -e "mirror -R --verbose --delete --exclude .htaccess ./public/ www; bye" sftp://${SFTP_SERVER}
