@@ -1,0 +1,44 @@
+name: build-and-deploy
+
+on:
+  push:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    env:
+      HUGO_VERSION: 0.146.0
+      BASE_URL: "https://opetit.fr/"
+      SFTP_SERVER: "sftp://ftp.cluster021.hosting.ovh.net"
+
+    steps:
+      - name: Install lftp
+        run: sudo apt update && sudo apt install lftp
+
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Hugo App
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: |
+          hugo \
+            --minify \
+            --baseURL "${BASE_URL}/"
+
+      - name: Deploy to server through sftp
+        run: |
+          lftp -u ${{ secrets.OVH_FTP_USER }},${{ secrets.OVH_FTP_PASSWORD }} -p 22 -e "mirror -R --verbose --delete --exclude .htaccess ./public/ www; bye" ${SFTP_SERVER}
