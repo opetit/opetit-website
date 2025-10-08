@@ -12,7 +12,6 @@ jobs:
     
     env:
       HUGO_VERSION: 0.146.0
-      BASE_URL: "https://opetit.fr/"
 
     steps:
       - name: Install lftp
@@ -34,10 +33,8 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          hugo \
-            --minify \
-            --baseURL "${BASE_URL}/"
-
+          hugo --minify
+          
       - name: Add server SSH key to known_hosts
         run: |
           mkdir -p ~/.ssh && ssh-keyscan -H ${{ secrets.SFTP_SERVER_NAME }} >> ~/.ssh/known_hosts
