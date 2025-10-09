@@ -3,10 +3,6 @@ languageCode = 'fr-FR'
 title = 'Olivier Petit'
 
 [menus]
-  [[menus.main]]
-    name = 'Home'
-    pageRef = '/'
-    weight = 10
 
   [[menus.main]]
     name = 'Blog'
