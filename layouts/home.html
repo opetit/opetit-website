@@ -1,3 +1,18 @@
 {{ define "main" }}
-  {{ .Content }}
+  <div class="hero">
+    <div class="intro">
+      <h1 class="title">Machine Learning Engineer</h1>
+      <p class="subtitle">
+        Je conçois et déploie des modèles intelligents, en accompagnant chaque étape : du choix de l’algorithme à la mise en production. Je mets à profit mes compétences scientifiques et techniques pour créer des solutions robustes, efficaces et directement applicables à des problèmes réels.
+      </p>
+      <div class="primary-button see-projects">Voir mes projets</div>
+    </div>
+    <div class="picture">
+      {{ with resources.Get "images/photo_pro_olivier_petit_modif.png" }}
+        {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
+          <img src="{{ .RelPermalink }}"/>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
 {{ end }}

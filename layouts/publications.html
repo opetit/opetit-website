@@ -1,4 +1,28 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
+  <div class="publication-list">
+    {{ range .Pages }}
+        <div class="publication-item">
+            <div class="graphical_abstract">
+                {{ with .Resources.GetMatch "graphical_abstract" }}
+                    {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
+                        <img src="{{ .RelPermalink }}" width="100%" alt="{{ .Params.alt }}">
+                    {{ end }}
+                {{ end }}
+            </div>
+            <div class="content">
+                <div class="author-list">
+                {{ with .Params.authors }}
+                    {{ delimit . ", " }}
+                {{ end }}
+                </div>
+                <h3 class="article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <div class="journal">
+                    <a target="_blank" href="{{ .Params.journal.link }}">{{ .Params.journal.text }}</a>
+                </div>
+            </div>
+        </div>
+    {{ end }}
+  </div>
 {{ end }}

@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+    <div class="publication-item-large">
+        <div class="content">
+            <div class="author-list">
+                {{ with .Params.authors }}
+                    {{ delimit . ", " }}
+                {{ end }}
+            </div>
+            <div class="journal">
+                <a target="_blank" href="{{ .Params.journal.link }}">{{ .Params.journal.text }}</a>
+                <div class="primary-button"><a href='{{ .Params.link }}' target="_blank" >Lire l'article</a></div>
+            </div>
+        </div>
+        {{ if .Content }}
+        <div class="article-abstract">
+            {{ .Content }}
+        </div>
+        {{ end }}
+        {{ with .Resources.GetMatch "graphical_abstract" }}
+        <h3>Graphical Abstract</h3>
+        <div class="graphical_abstract">
+            {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
+            <a target="_blank" href="{{ .RelPermalink }}"><img src="{{ .RelPermalink }}" width="100%" alt="{{ .Params.alt }}"></a>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+{{ end }}
