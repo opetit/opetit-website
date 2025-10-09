@@ -79,6 +79,28 @@ body {
     gap: 1rem;
   }
 
+  .links {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    i {
+      padding: 3px;
+      line-height: 0.5em;
+      vertical-align: -0.15em;
+      display: inline-flex;
+    }
+
+    i:hover {
+      padding: 0;
+      transition: 300ms;
+      font-size: 30px;
+    }
+  }
+
   .picture {
     flex: 1;
     img {
