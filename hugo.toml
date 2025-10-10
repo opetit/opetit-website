@@ -14,11 +14,6 @@ title = 'Olivier Petit'
     pageRef = '/publications'
     weight = 30
 
-  [[menus.main]]
-    name = 'Contact'
-    pageRef = '/contact'
-    weight = 40
-
 
 [module]
   [module.hugoVersion]

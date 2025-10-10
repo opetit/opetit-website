@@ -23,6 +23,7 @@ strong {
 h1, h2, h3, h4 {
   color: var(--high-text-color);
   margin-bottom: 2rem;
+  text-align: left;
 }
 
 a {
@@ -38,7 +39,19 @@ a {
   padding: 8px 15px 8px 15px;
 }
 
-.primary-button:hover {
+.tags-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  .tag {
+    padding: 6px 8px;
+    border-radius: var(--radius);
+  }
+}
+
+.primary-button:hover.primary-button:not(.deactivated) {
   cursor: pointer;
   transition: 300ms;
   background-color: var(--focus-button-bg-color);
@@ -66,7 +79,9 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
   gap: 4rem;
+  text-align: justify;
 
   .title {
     margin-bottom: 0;
@@ -80,7 +95,6 @@ body {
   }
 
   .links {
-    width: 100%;
     margin-top: 5px;
     font-size: 24px;
     text-align: center;
@@ -103,9 +117,38 @@ body {
 
   .picture {
     flex: 1;
+    text-align: center;
     img {
+      min-width: none;
       max-width: 300px;
       border-radius: var(--radius);
+    }
+  }
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  
+  .project-card {
+    max-width: 472px;
+    margin: 0;
+
+    .project-title {
+      margin-bottom: 6px;
+    }
+
+    .project-subtitle {
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: var(--high-text-color);
+    }
+
+    .project-desc {
+      margin: 16px 0;
+      text-align: justify;
     }
   }
 }
@@ -117,11 +160,7 @@ body {
 
   .research-activities-content {
     margin: 0;
-  }
-
-  .research-activities-link {
-    margin-top: 1rem;
-    padding-left: 1.5rem;
+    text-align: justify;
   }
 }
 
@@ -159,6 +198,7 @@ header {
 }
 
 .publication-list {
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -166,15 +206,18 @@ header {
   .publication-item {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
 
     .graphical_abstract {
       flex: 1;
+      min-width: 400px;
     }
 
     .content {
       flex: 2;
+      min-width: 300px;
 
       .article-title {
         color: var(--high-text-color);
@@ -187,6 +230,45 @@ header {
         align-items: center;
         justify-content: space-between;
       }
+    }
+  }
+}
+
+.thruhiking {
+  margin-top: 3rem;
+}
+
+.thruhiking-description {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+
+  .thruhiking-photo {
+    flex: 1;
+    text-align: center;
+    img {
+      max-width: 340px;
+      border-radius: var(--radius);
+    }
+  }
+
+  .thruhiking-desc {
+    flex: 2;
+    text-align: justify;
+  }
+
+  .trail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    .trail-infos {
+      margin-left: 24px;
+      padding: 6px 12px;
+      border-left: 3px solid var(--accent-color);
     }
   }
 }
@@ -217,4 +299,9 @@ header {
 
 .author-list {
   font-style: italic;
+}
+
+.end-section-link {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
 }
