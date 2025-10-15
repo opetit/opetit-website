@@ -1,0 +1,24 @@
+{{ define "main" }}
+    {{ with resources.Get "css/cvprompt.css" }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ end }}
+    {{ with resources.Get "js/cvprompt.js" | js.Build (dict "params" (dict "apiUrl" (getenv "HUGO_API_URL")))  }}
+    <script src="{{ .RelPermalink }}"></script>
+    {{ end }}
+    
+    <h2>CV Prompt</h2>
+    <p>
+        <strong>Trouvez dans mon CV les expériences qui me permettraient de répondre à votre projet.</strong>
+        <br />
+        Exemple : « Je veux développer un chatbot intelligent capable d’interroger ma base documentaire. »
+    </p>
+
+    <div class="cvpromptForm content-card">
+        <textarea id="cvpromptTextInput" placeholder="Indiquez votre projet..."></textarea>
+        <div class="primary-button" id="cvpromptSend">Envoyer</div>
+    </div>
+
+    <div id="cvpromptResult">
+
+    </div>
+{{ end }}

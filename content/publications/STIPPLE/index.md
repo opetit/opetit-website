@@ -1,21 +1,22 @@
 ---
-title: "3D Spatial Priors for Semi-Supervised Organ Segmentation with Deep Convolutional Neural Networks"
 authors:
-    - Olivier Petit
-    - Nicolas Thome
-    - Luc Soler
-year: "2021"
-resources:
-    - name: "graphical_abstract"
-      src: "STIPPLE_550x180.png"
-      params:
-        alt: "STIPPLE grahical abstract"      
+- Olivier Petit
+- Nicolas Thome
+- Luc Soler
 journal:
-    link: "https://www.springer.com/journal/11548/"
-    text: "IJCARS 2021"
-link: "https://hal.science/hal-03337091/file/IJCARS_Prior_final.pdf"
+  link: https://www.springer.com/journal/11548/
+  text: IJCARS 2021
+layout: publication
+link: https://hal.science/hal-03337091/file/IJCARS_Prior_final.pdf
+resources:
+- name: graphical_abstract
+  params:
+    alt: STIPPLE grahical abstract
+  src: STIPPLE_550x180.png
+title: 3D Spatial Priors for Semi-Supervised Organ Segmentation with Deep Convolutional
+  Neural Networks
 weight: 2
-layout: "publication"
+year: "2021"
 ---
 
 **Purpose**: Fully Convolutional neural Networks (FCNs) are the most popular models for medical image segmentation. However, they do not explicitly integrate spatial organ positions, which can be crucial for proper labeling in challenging contexts.

@@ -1,11 +1,11 @@
 ---
-title: "Thesis \"Semantic Segmentation of 3D Medical Images with Deep Learning\""
 authors:
-    - Olivier Petit
-year: "2021"
-link: "https://drive.google.com/file/d/1QvT9rzdITCWDFhyIbjxmZEDvGHUo1EgG/view?usp=sharing"
+- Olivier Petit
+layout: publication
+link: https://drive.google.com/file/d/1QvT9rzdITCWDFhyIbjxmZEDvGHUo1EgG/view?usp=sharing
+title: Thesis "Semantic Segmentation of 3D Medical Images with Deep Learning"
 weight: 1
-layout: "publication"
+year: "2021"
 ---
 
 **Manuscript final de thèse**

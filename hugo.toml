@@ -14,6 +14,10 @@ title = 'Olivier Petit'
     pageRef = '/publications'
     weight = 30
 
+  [[menus.main]]
+    name = 'CVPrompt'
+    pageRef = '/cvprompt'
+    weight = 40
 
 [module]
   [module.hugoVersion]
