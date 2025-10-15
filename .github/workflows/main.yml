@@ -33,7 +33,7 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          env API_URL=${{ secrets.API_URL }} hugo --minify
+          env HUGO_API_URL=${{ secrets.HUGO_API_URL }} hugo --minify
           
       - name: Add server SSH key to known_hosts
         run: |
