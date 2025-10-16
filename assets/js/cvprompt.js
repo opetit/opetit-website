@@ -67,6 +67,11 @@ async function cvsearch() {
             resultDiv.textContent = "🤔 Aucun contenu pertinent trouvé...";
         } else {
             resultDiv.textContent = "";
+            const queryP = document.createElement("p");
+            const queryStrong = document.createElement("strong")
+            queryP.appendChild(queryStrong);
+            queryStrong.textContent = "Votre projet : « " + userInput + " »";
+            resultDiv.appendChild(queryP);
             addProjectsFromData(data, resultDiv);
             document.getElementsByClassName("intro")[0].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
         }
