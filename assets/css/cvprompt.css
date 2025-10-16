@@ -1,6 +1,19 @@
+.cvpromptContainer {
+    margin: 2rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 3rem;
+}
+
+.intro {
+    max-width: 80%;
+    padding: 0 2rem 0 2rem;
+}
+
 .cvpromptForm {
     width: 100%;
-    margin: 50px auto 50px auto;
+    margin: 0 auto 0 auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -36,13 +49,46 @@
     border: 1px solid #2dd4bf59;
     border-radius: 15px;
     padding: 20px;
-    margin-bottom: 10px;
+
+    opacity: 0;
+    transform: translateX(100%);
+    transition:
+        opacity 1s ease-out,
+        transform 0.5s ease-out;
 
     h3 {
-        margin-bottom: 5px;
+        margin-bottom: 1rem;
     }
 
-    .chunk {
-        padding-left: 20px;
+    .chunks {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        .chunk {
+            width: 100%;
+            padding-left: 2rem;
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+        }
     }
+
+}
+
+.project.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contactme {
+    margin-top: 5rem;
+    text-align: center;
+    font-style: italic;
 }

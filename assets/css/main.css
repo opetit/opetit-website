@@ -92,26 +92,21 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
 
-  .links {
-    margin-top: 5px;
-    font-size: 24px;
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    .cvprompt-info {
+      margin-top: 2rem;
+      padding: 2rem;
+      div {
+        height: 1rem;
+        text-align: right;
+        font-size: medium;
+        font-style: normal;
+        transition: all 0.3s;
+      }
 
-    i {
-      padding: 3px;
-      line-height: 0.5em;
-      vertical-align: -0.15em;
-      display: inline-flex;
-    }
-
-    i:hover {
-      padding: 0;
-      transition: 300ms;
-      font-size: 30px;
+      div:hover {
+        font-size: large;
+      }
     }
   }
 
@@ -123,6 +118,27 @@ body {
       max-width: 300px;
       border-radius: var(--radius);
     }
+  }
+}
+
+.links {
+  margin-top: 5px;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  i {
+    padding: 3px;
+    line-height: 0.5em;
+    vertical-align: -0.15em;
+    display: inline-flex;
+  }
+
+  i:hover {
+    padding: 0;
+    transition: 300ms;
+    font-size: 30px;
   }
 }
 

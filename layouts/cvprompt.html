@@ -5,20 +5,30 @@
     {{ with resources.Get "js/cvprompt.js" | js.Build (dict "params" (dict "apiUrl" (getenv "HUGO_API_URL")))  }}
     <script src="{{ .RelPermalink }}"></script>
     {{ end }}
-    
-    <h2>CV Prompt</h2>
-    <p>
-        <strong>Trouvez dans mon CV les expériences qui me permettraient de répondre à votre projet.</strong>
-        <br />
-        Exemple : « Je veux développer un chatbot intelligent capable d’interroger ma base documentaire. »
-    </p>
 
-    <div class="cvpromptForm content-card">
-        <textarea id="cvpromptTextInput" placeholder="Indiquez votre projet..."></textarea>
-        <div class="primary-button" id="cvpromptSend">Envoyer</div>
+    <div class="cvpromptContainer">
+        <p id="intro-id" class="intro">
+            <strong><large>Explorez mon parcours autrement : cet outil analyse mes expériences et compétences pour vous montrer comment elles s’alignent sur les besoins spécifiques de votre projet.</large></strong>
+            <br />
+            <i>Exemple : <br/>« Je veux développer un chatbot intelligent capable d’interroger ma base documentaire. »</i>
+        </p>
+
+        <div id="cvpromptResult" class="results">
+        </div>
+
+        <div class="cvpromptForm content-card">
+            <textarea id="cvpromptTextInput" placeholder="Indiquez votre projet..."></textarea>
+            <div class="primary-button" id="cvpromptSend">Envoyer</div>
+        </div>
     </div>
 
-    <div id="cvpromptResult">
-
+    <div class="contactme">
+        <div>Me contacter</div>
+        <div class="links">
+            <a href="mailto:olivier.petit@opetit.fr"><i class="fi fi-ss-envelope"></i></a> • 
+            <a target="_blank" href="https://www.linkedin.com/in/olivier-petit-97737a108"><i class="fi fi-brands-linkedin"></i></a> • 
+            <a target="_blank" href="https://github.com/opetit"><i class="fi fi-brands-github"></i></a>
+        </div>
     </div>
+
 {{ end }}
