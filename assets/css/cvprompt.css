@@ -57,6 +57,12 @@
         transform 0.5s ease-out;
 
     h3 {
+        margin-bottom: 0;
+    }
+
+    p {
+        font-style: italic;
+        font-size: small;
         margin-bottom: 1rem;
     }
 

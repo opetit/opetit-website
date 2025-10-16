@@ -20,6 +20,10 @@ function addNewProject(project, showTime, data, resultDiv) {
     const title = document.createElement("h3");
     title.textContent = project.name;
     projectDiv.appendChild(title);
+    // company
+    const company = document.createElement("p");
+    company.textContent = project.company;
+    projectDiv.appendChild(company);
 
     // append chunks
     const relatedChunks = data.chunks.filter(c => c.project_id === project.id);
