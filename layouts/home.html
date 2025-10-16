@@ -1,164 +1,165 @@
 {{ define "main" }}
-  <div class="hero">
-    <div class="intro">
-      <h1 class="title">Machine Learning Engineer Freelance</h1>
-      <p class="subtitle">
-        Je conçois et déploie des modèles intelligents, en accompagnant chaque étape : du choix de l’algorithme à la mise en production. Je mets à profit mes compétences scientifiques et techniques pour créer des solutions robustes, efficaces et directement applicables à des problèmes concrets.
-      </p>
-      <div class="keywords tags-list">
-        <span class="primary-button deactivated">Artificial Intelligence</span>
-        <span class="primary-button deactivated">Deep Learning</span>
-        <span class="primary-button deactivated">Data</span>
-        <span class="primary-button deactivated">Cloud</span>
-        <span class="primary-button deactivated">MLOps</span>
-      </div>
-      <div class="primary-button deactivated cvprompt-info">
-        <strong>Trouvez en un instant ce qui, dans mon CV, correspond le mieux à votre projet !</strong>
-        <div>
-          <a href="/cvprompt"><i>C'est par ici 👀  →</i></a>
+  <div class="home-main-container">
+    <div class="hero">
+      <div class="intro">
+        <h1 class="title">Machine Learning Engineer Freelance</h1>
+        <p class="subtitle">
+          Je conçois et déploie des modèles intelligents, en accompagnant chaque étape : du choix de l’algorithme à la mise en production. Je mets à profit mes compétences scientifiques et techniques pour créer des solutions robustes, efficaces et directement applicables à des problèmes concrets.
+        </p>
+        <div class="keywords tags-list">
+          <span class="primary-button deactivated">Artificial Intelligence</span>
+          <span class="primary-button deactivated">Deep Learning</span>
+          <span class="primary-button deactivated">Data</span>
+          <span class="primary-button deactivated">Cloud</span>
+          <span class="primary-button deactivated">MLOps</span>
+        </div>
+        <div class="primary-button deactivated cvprompt-info">
+          <strong>Trouvez en un instant ce qui, dans mon CV, correspond le mieux à votre projet !</strong>
+          <div>
+            <a href="/cvprompt"><i>C'est par ici 👀  →</i></a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="picture">
-      {{ with resources.Get "images/photo_pro_olivier_petit_modif.png" }}
-        {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
-          <img src="{{ .RelPermalink }}"/>
-        {{ end }}
-      {{ end }}
-      <div class="links content-card">
-        <a target="_blank" href="https://github.com/opetit"><i class="fi fi-brands-github"></i></a> • 
-        <a target="_blank" href="https://www.linkedin.com/in/olivier-petit-97737a108"><i class="fi fi-brands-linkedin"></i></a> • 
-        <a target="_blank" href="https://scholar.google.com/citations?user=9aMV880AAAAJ&hl=en"><i class="fi fi-ss-graduation-cap"></i></a> • 
-        <a href="mailto:olivier.petit@opetit.fr"><i class="fi fi-ss-envelope"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="projects">
-    <h2 id="my-projects">Projets</h2>
-    <div class="projects-list">
-      <!-- Lead Tech -->
-      <div class="project-card content-card">
-        <h3 class="project-title">Lead Tech Fullstack</h3>
-        <p class="project-subtitle">
-          Capgemini Invent
-        </p>
-        <p class="project-desc">
-          <strong>Lead Tech</strong> pour le développement <strong>fullstack</strong> d'une application web dédiée à l'audit de modèles d'IA. Mise en production sur <strong>AWS</strong>.
-        </p>
-        <div class="tags-list">
-          <span class="tag primary-button deactivated">Angular</span>
-          <span class="tag primary-button deactivated">Python</span>
-          <span class="tag primary-button deactivated">AWS</span>
-          <span class="tag primary-button deactivated">CI/CD</span>
-        </div>
-      </div>
-      <!-- - -->
-      <!-- RAG -->
-      <div class="project-card content-card">
-        <h3 class="project-title">Chatbots et RAGs</h3>
-        <p class="project-subtitle">
-          Capgemini Invent
-        </p>
-        <p class="project-desc">
-          Développement de <strong>chatbots</strong> et de systèmes <strong>RAG</strong> basés sur des <strong>LLMs</strong> (GPT et Mistral). Déploiement sur le cloud <strong>Azure</strong> et on premise.
-        </p>
-        <div class="tags-list">
-          <span class="tag primary-button deactivated">LLM</span>
-          <span class="tag primary-button deactivated">RAG</span>
-          <span class="tag primary-button deactivated">GPT/Mistral</span>
-          <span class="tag primary-button deactivated">Azure</span>
-        </div>
-      </div>
-      <!-- - -->
-      <!-- INNERVE -->
-      <div class="project-card content-card">
-        <h3 class="project-title">INNERVE</h3>
-        <p class="project-subtitle">
-          Quantmetry — AP-HP
-        </p>
-        <p class="project-desc">
-          Implémentation et entraînement de modèles de <strong>computer vision</strong> pour la détection de fibres nerveuses 
-          dans des biopsies de peau. Projet réalisé en collaboration avec l'AP-HP (CHU Bicêtre). 
-          Industrialisation du modèle <strong>on premise</strong> à l'hôpital.
-        </p>
-        <div class="tags-list">
-          <span class="tag primary-button deactivated">CV</span>
-          <span class="tag primary-button deactivated">Medical Imaging</span>
-          <span class="tag primary-button deactivated">Pytorch</span>
-          <span class="tag primary-button deactivated">Docker</span>
-        </div>
-      </div>
-      <!-- - -->
-      <!-- Thèse Cifre -->
-      <div class="project-card content-card">
-        <h3 class="project-title">Thèse Cifre en IA</h3>
-        <p class="project-subtitle">
-          Visible Patient — CNAM
-        </p>
-        <p class="project-desc">
-          Collaboration avec les équipes de R&D pour la <strong>mise en production</strong> des outils d'IA développés dans le cadre de la thèse, intégrés au logiciel d'annotation utilisé par les radiologues. Présentations régulières des travaux en cours et des résultats, ainsi que partage des modèles entraînés.
-        </p>
-        <div class="tags-list">
-          <span class="tag primary-button deactivated">Python</span>
-          <span class="tag primary-button deactivated">Pytorch/Tensorflow</span>
-          <span class="tag primary-button deactivated">Medical Imaging</span>
-        </div>
-      </div>
-      <!-- - -->
-    </div>
-
-    <div class="end-section-link">
-      <a href="https://flowcv.com/resume/5l6vajtngr2m" target="_blank">Voir mon CV en PDF →</a>
-    </div>
-  </div>
-
-  <div class="research-activities">
-    <h2>Travaux de Recherche</h2>
-    <div class="content-card research-activities-content">
-      Après avoir obtenu mon <strong>diplôme d'ingénieur</strong> en informatique, j'ai rejoint le 
-      laboratoire CEDRIC pour y réaliser une <strong>thèse</strong> en <strong>intelligence artificielle</strong> 
-      appliquée à <strong>l'imagerie médicale</strong>. J'ai créé de nouvelles architectures de 
-      <strong>réseaux de neurones profonds</strong> afin d'améliorer la <strong>segmentation d'organes</strong> sur 
-      des images de scanner de l'abdomen.
-    </div>
-    <div class="end-section-link">
-      <a href="/publications">Retrouvez l'ensemble de mes travaux ici →</a>
-    </div>
-  </div>
-
-  <div class="thruhiking">
-    <h2>Thru-Hiking</h2>
-    <div class="thruhiking-description">
-      <div class="thruhiking-photo">
-        {{ with resources.Get "images/thruhiking.jpg" }}
+      <div class="picture">
+        {{ with resources.Get "images/photo_pro_olivier_petit_modif.png" }}
           {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
             <img src="{{ .RelPermalink }}"/>
           {{ end }}
         {{ end }}
-      </div>
-      <div class="thruhiking-desc">
-        <p>
-          Ma passion pour la randonnée longue distance illustre la manière dont j'aborde mes missions.
-          <strong>Planification</strong>, <strong>rigueur</strong>, <strong>autonomie</strong> et <strong>détermination</strong> sont les maîtres mots de ces aventures où le dépassement de soi occupe une place centrale.
-          J'applique la même philosophie dans mon travail, avec pour objectif constant de progresser et de devenir meilleur.
-        </p>
-        <div class="trail-list">
-          <div class="trail-infos">
-            <div class="trail-name"><strong>Colorado Trail</strong> — États-Unis, CO</div>
-            <div class="trail-meta">790km, 27 127 D+, 31 jours</div>
-          </div>
-          <div class="trail-infos">
-            <div class="trail-name"><strong>Alta Via 1</strong> — Dolomites, Italie</div>
-            <div class="trail-meta">125km, 6 700 D+, 7 jours</div>
-          </div>
-          <div class="trail-infos">
-            <div class="trail-name"><strong>Tour du Mont-Blanc</strong> — Chamonix, France</div>
-            <div class="trail-meta">170km — 10 600 D+ — 8 jours</div>
-          </div>
+        <div class="content-card links">
+          <a target="_blank" href="https://github.com/opetit"><i class="fi fi-brands-github"></i></a> • 
+          <a target="_blank" href="https://www.linkedin.com/in/olivier-petit-97737a108"><i class="fi fi-brands-linkedin"></i></a> • 
+          <a target="_blank" href="https://scholar.google.com/citations?user=9aMV880AAAAJ&hl=en"><i class="fi fi-ss-graduation-cap"></i></a> • 
+          <a href="mailto:olivier.petit@opetit.fr"><i class="fi fi-ss-envelope"></i></a>
         </div>
       </div>
     </div>
 
+    <div class="projects">
+      <h2 class="max-width-title" id="my-projects">Projets<hr/></h2>
+      <div class="projects-list">
+        <!-- Lead Tech -->
+        <div class="project-card content-card">
+          <h3 class="project-title">Lead Tech Fullstack</h3>
+          <p class="project-subtitle">
+            Capgemini Invent
+          </p>
+          <p class="project-desc">
+            <strong>Lead Tech</strong> pour le développement <strong>fullstack</strong> d'une application web dédiée à l'audit de modèles d'IA. Mise en production sur <strong>AWS</strong>.
+          </p>
+          <div class="tags-list">
+            <span class="tag primary-button deactivated">Angular</span>
+            <span class="tag primary-button deactivated">Python</span>
+            <span class="tag primary-button deactivated">AWS</span>
+            <span class="tag primary-button deactivated">CI/CD</span>
+          </div>
+        </div>
+        <!-- - -->
+        <!-- RAG -->
+        <div class="project-card content-card">
+          <h3 class="project-title">Chatbots et RAGs</h3>
+          <p class="project-subtitle">
+            Capgemini Invent
+          </p>
+          <p class="project-desc">
+            Développement de <strong>chatbots</strong> et de systèmes <strong>RAG</strong> basés sur des <strong>LLMs</strong> (GPT et Mistral). Déploiement sur le cloud <strong>Azure</strong> et on premise.
+          </p>
+          <div class="tags-list">
+            <span class="tag primary-button deactivated">LLM</span>
+            <span class="tag primary-button deactivated">RAG</span>
+            <span class="tag primary-button deactivated">GPT/Mistral</span>
+            <span class="tag primary-button deactivated">Azure</span>
+          </div>
+        </div>
+        <!-- - -->
+        <!-- INNERVE -->
+        <div class="project-card content-card">
+          <h3 class="project-title">INNERVE</h3>
+          <p class="project-subtitle">
+            Quantmetry — AP-HP
+          </p>
+          <p class="project-desc">
+            Implémentation et entraînement de modèles de <strong>computer vision</strong> pour la détection de fibres nerveuses 
+            dans des biopsies de peau. Projet réalisé en collaboration avec l'AP-HP (CHU Bicêtre). 
+            Industrialisation du modèle <strong>on premise</strong> à l'hôpital.
+          </p>
+          <div class="tags-list">
+            <span class="tag primary-button deactivated">CV</span>
+            <span class="tag primary-button deactivated">Medical Imaging</span>
+            <span class="tag primary-button deactivated">Pytorch</span>
+            <span class="tag primary-button deactivated">Docker</span>
+          </div>
+        </div>
+        <!-- - -->
+        <!-- Thèse Cifre -->
+        <div class="project-card content-card">
+          <h3 class="project-title">Thèse Cifre en IA</h3>
+          <p class="project-subtitle">
+            Visible Patient — CNAM
+          </p>
+          <p class="project-desc">
+            Collaboration avec les équipes de R&D pour la <strong>mise en production</strong> des outils d'IA développés dans le cadre de la thèse, intégrés au logiciel d'annotation utilisé par les radiologues. Présentations régulières des travaux en cours et des résultats, ainsi que partage des modèles entraînés.
+          </p>
+          <div class="tags-list">
+            <span class="tag primary-button deactivated">Python</span>
+            <span class="tag primary-button deactivated">Pytorch/Tensorflow</span>
+            <span class="tag primary-button deactivated">Medical Imaging</span>
+          </div>
+        </div>
+        <!-- - -->
+      </div>
+
+      <div class="end-section-link">
+        <a href="https://flowcv.com/resume/5l6vajtngr2m" target="_blank">Voir mon CV en PDF →</a>
+      </div>
+    </div>
+
+    <div class="research-activities">
+      <h2 class="max-width-title">Travaux de Recherche<hr/></h2>
+      <div class="content-card research-activities-content">
+        Après avoir obtenu mon <strong>diplôme d'ingénieur</strong> en informatique, j'ai rejoint le 
+        laboratoire CEDRIC pour y réaliser une <strong>thèse</strong> en <strong>intelligence artificielle</strong> 
+        appliquée à <strong>l'imagerie médicale</strong>. J'ai créé de nouvelles architectures de 
+        <strong>réseaux de neurones profonds</strong> afin d'améliorer la <strong>segmentation d'organes</strong> sur 
+        des images de scanner de l'abdomen.
+      </div>
+      <div class="end-section-link">
+        <a href="/publications">Retrouvez l'ensemble de mes travaux ici →</a>
+      </div>
+    </div>
+
+    <div class="thruhiking">
+      <h2 class="max-width-title">Thru-Hiking<hr/></h2>
+      <div class="thruhiking-description">
+        <div class="thruhiking-photo">
+          {{ with resources.Get "images/thruhiking.jpg" }}
+            {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
+              <img src="{{ .RelPermalink }}"/>
+            {{ end }}
+          {{ end }}
+        </div>
+        <div class="thruhiking-desc">
+          <p>
+            Ma passion pour la randonnée longue distance illustre la manière dont j'aborde mes missions.
+            <strong>Planification</strong>, <strong>rigueur</strong>, <strong>autonomie</strong> et <strong>détermination</strong> sont les maîtres mots de ces aventures où le dépassement de soi occupe une place centrale.
+            J'applique la même philosophie dans mon travail, avec pour objectif constant de progresser et de devenir meilleur.
+          </p>
+          <div class="trail-list">
+            <div class="trail-infos">
+              <div class="trail-name"><strong>Colorado Trail</strong> — États-Unis, CO</div>
+              <div class="trail-meta">790km, 27 127 D+, 31 jours</div>
+            </div>
+            <div class="trail-infos">
+              <div class="trail-name"><strong>Alta Via 1</strong> — Dolomites, Italie</div>
+              <div class="trail-meta">125km, 6 700 D+, 7 jours</div>
+            </div>
+            <div class="trail-infos">
+              <div class="trail-name"><strong>Tour du Mont-Blanc</strong> — Chamonix, France</div>
+              <div class="trail-meta">170km — 10 600 D+ — 8 jours</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 {{ end }}
