@@ -37,6 +37,19 @@ function addNewProject(project, showTime, data, resultDiv) {
         chunksDiv.appendChild(chunkDiv);
     });
     projectDiv.appendChild(chunksDiv);
+    // Similarity
+    const similarity = document.createElement("div");
+    if (project.score > 0.6) {
+        similarity.className = "similarity strong-similarity";
+        similarity.textContent = "Très forte correspondance";
+    } else if (project.score > 0.5) {
+        similarity.className = "similarity good-similarity";
+        similarity.textContent = "Bonne correspondance";
+    } else {
+        similarity.className = "similarity medium-similarity";
+        similarity.textContent = "Pertinence modérée";
+    }
+    projectDiv.appendChild(similarity);
     resultDiv.appendChild(projectDiv);
     setTimeout(() => projectDiv.classList.add("show"), showTime);
 }
@@ -49,6 +62,14 @@ async function addProjectsFromData(data, resultDiv) {
     for (const [i, project] of data.projects.entries()) {
         addNewProject(project, 50*(i+1), data, resultDiv);
     }
+}
+
+function addCTA(resultDiv) {
+    const ctaDiv = document.createElement("div");
+    ctaDiv.className = "cta";
+    ctaDiv.innerHTML = '<div><a href="mailto:olivier.petit@opetit.fr">Vous avez un projet ? Discutons-en ! 👋</a></div>\
+    <div><a href="https://flowcv.com/resume/5l6vajtngr2m" target="_blank">Voir mon CV en PDF</a></div>';
+    resultDiv.appendChild(ctaDiv);
 }
 
 async function cvsearch() {
@@ -73,7 +94,8 @@ async function cvsearch() {
             queryStrong.textContent = "Votre projet : « " + userInput + " »";
             resultDiv.appendChild(queryP);
             addProjectsFromData(data, resultDiv);
-            document.getElementsByClassName("intro")[0].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+            addCTA(resultDiv);
+            document.getElementsByClassName("intro")[0].scrollIntoView({ behavior: "smooth", block: "start" });
         }
     } catch (error) {
         resultDiv.textContent = "❌ Oups, une erreur s'est produite...";

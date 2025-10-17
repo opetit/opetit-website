@@ -94,7 +94,17 @@
 }
 
 .contactme {
-    margin-top: 5rem;
+    margin-top: 3rem;
     text-align: center;
     font-style: italic;
+}
+
+.cta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.similarity {
+    text-align: right;
 }
