@@ -68,7 +68,7 @@ function addCTA(resultDiv) {
     const ctaDiv = document.createElement("div");
     ctaDiv.className = "cta";
     ctaDiv.innerHTML = '<div><a href="mailto:olivier.petit@opetit.fr">Vous avez un projet ? Discutons-en ! 👋</a></div>\
-    <div><a href="https://flowcv.com/resume/5l6vajtngr2m" target="_blank">Voir mon CV en PDF</a></div>';
+    <div><a href="https://drive.google.com/file/d/1-lpViICYxFEH-VZEnSlDbO3YdWeueHsn/view?usp=sharing" target="_blank">Voir mon CV en PDF</a></div>';
     resultDiv.appendChild(ctaDiv);
 }
 
