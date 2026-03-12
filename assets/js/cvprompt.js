@@ -67,7 +67,7 @@ async function addProjectsFromData(data, resultDiv) {
 function addCTA(resultDiv) {
     const ctaDiv = document.createElement("div");
     ctaDiv.className = "cta";
-    ctaDiv.innerHTML = '<div><a href="mailto:olivier.petit@opetit.fr">Vous avez un projet ? Discutons-en ! 👋</a></div>\
+    ctaDiv.innerHTML = '<div><a href="https://www.linkedin.com/in/olivier-petit-97737a108">Vous avez un projet ? Discutons-en ! 👋</a></div>\
     <div><a href="https://drive.google.com/file/d/1-lpViICYxFEH-VZEnSlDbO3YdWeueHsn/view?usp=sharing" target="_blank">Voir mon CV en PDF</a></div>';
     resultDiv.appendChild(ctaDiv);
 }
