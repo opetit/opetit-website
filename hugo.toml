@@ -10,7 +10,7 @@ title = 'Olivier Petit'
     weight = 20
 
   [[menus.main]]
-    name = 'Publications'
+    name = 'PhD'
     pageRef = '/publications'
     weight = 30
 
