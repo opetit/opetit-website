@@ -1,6 +1,6 @@
 ---
 layout: publications
-title: Publications
+title: PhD - Publications
 ---
 
-J’ai eu le plaisir de réaliser un doctorat au laboratoire CEDRIC du Cnam, en collaboration avec l’entreprise Visible Patient, dans le cadre d’une CIFRE. Vous pouvez retrouver l’ensemble de mes publications ainsi que mon manuscrit final de thèse sur cette page.
+I had the pleasure of carrying out my Ph.D. at the CEDRIC lab at the CNAM, in collaboration with the company Visible Patient, as part of a CIFRE program. You can find all of my publications as well as my final thesis document on this page.
