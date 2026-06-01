@@ -70,6 +70,10 @@
         flex-direction: column;
         gap: 0.3rem;
 
+        i {
+            padding-top: 2px;
+        }
+
         .chunk {
             width: 100%;
             padding-left: 2rem;
