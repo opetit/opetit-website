@@ -41,13 +41,13 @@ function addNewProject(project, showTime, data, resultDiv) {
     const similarity = document.createElement("div");
     if (project.score > 0.6) {
         similarity.className = "similarity strong-similarity";
-        similarity.textContent = "Très forte correspondance";
+        similarity.textContent = "Very strong match";
     } else if (project.score > 0.5) {
         similarity.className = "similarity good-similarity";
-        similarity.textContent = "Bonne correspondance";
+        similarity.textContent = "Strong match";
     } else {
         similarity.className = "similarity medium-similarity";
-        similarity.textContent = "Pertinence modérée";
+        similarity.textContent = "Match";
     }
     projectDiv.appendChild(similarity);
     resultDiv.appendChild(projectDiv);
@@ -56,7 +56,7 @@ function addNewProject(project, showTime, data, resultDiv) {
 
 async function addProjectsFromData(data, resultDiv) {
     const introP = document.createElement("p");
-    introP.textContent = "Voici mes expériences qui correspondent le mieux à votre projet :";
+    introP.textContent = "Here are the best matches for your query:";
     resultDiv.appendChild(introP);
 
     for (const [i, project] of data.projects.entries()) {
@@ -67,8 +67,8 @@ async function addProjectsFromData(data, resultDiv) {
 function addCTA(resultDiv) {
     const ctaDiv = document.createElement("div");
     ctaDiv.className = "cta";
-    ctaDiv.innerHTML = '<div><a href="https://www.linkedin.com/in/olivier-petit-97737a108">Vous avez un projet ? Discutons-en ! 👋</a></div>\
-    <div><a href="https://drive.google.com/file/d/1-lpViICYxFEH-VZEnSlDbO3YdWeueHsn/view?usp=sharing" target="_blank">Voir mon CV en PDF</a></div>';
+    ctaDiv.innerHTML = '<div><a href="https://www.linkedin.com/in/olivier-petit-97737a108">Do you have a project? Let\'s talk about it! 👋</a></div>\
+    <div><a href="https://drive.google.com/file/d/1-lpViICYxFEH-VZEnSlDbO3YdWeueHsn/view?usp=sharing" target="_blank">See my resume in PDF</a></div>';
     resultDiv.appendChild(ctaDiv);
 }
 
@@ -80,25 +80,25 @@ async function cvsearch() {
         return;
     }
     
-    resultDiv.textContent = "⏳ En attente de réponse...";
+    resultDiv.textContent = "⏳ Searching...";
 
     try {
         const data = await fetchData(userInput);
         if (data.projects.length == 0) {
-            resultDiv.textContent = "🤔 Aucun contenu pertinent trouvé...";
+            resultDiv.textContent = "🤔 No relevant content found...";
         } else {
             resultDiv.textContent = "";
             const queryP = document.createElement("p");
             const queryStrong = document.createElement("strong")
             queryP.appendChild(queryStrong);
-            queryStrong.textContent = "Votre projet : « " + userInput + " »";
+            queryStrong.textContent = "Your query: \" " + userInput + " \"";
             resultDiv.appendChild(queryP);
             addProjectsFromData(data, resultDiv);
             addCTA(resultDiv);
             document.getElementsByClassName("intro")[0].scrollIntoView({ behavior: "smooth", block: "start" });
         }
     } catch (error) {
-        resultDiv.textContent = "❌ Oups, une erreur s'est produite...";
+        resultDiv.textContent = "❌ Oops, an error has occurred...";
     }
     
     inputText.value = "";
